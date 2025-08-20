@@ -1,4 +1,4 @@
-package com.example.screenmatchspring.Model;
+package com.example.critiboxspring.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

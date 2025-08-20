@@ -1,4 +1,4 @@
-package com.example.screenmatchspring.services;
+package com.example.critiboxspring.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

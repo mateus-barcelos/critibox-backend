@@ -1,10 +1,10 @@
-package com.example.screenmatchspring;
+package com.example.critiboxspring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ScreenmatchspringApplicationTests {
+class critiBoxApplicationTests {
 
 	@Test
 	void contextLoads() {

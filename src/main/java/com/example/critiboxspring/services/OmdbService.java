@@ -1,4 +1,4 @@
-package com.example.screenmatchspring.services;
+package com.example.critiboxspring.services;
 
 import java.io.IOException;
 import java.net.URI;
