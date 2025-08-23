@@ -30,6 +30,7 @@ public class ReviewController {
     public ResponseEntity<Review> createReview(@RequestBody ReviewDTO reviewDTO){
         Review review = new Review(reviewDTO);
         review.setUserOwner(userService.getUserById(reviewDTO.userOwnerId()).get());
+        userService.getUserById(reviewDTO.userOwnerId()).get().addReview(review);
         reviewService.saveReview(review);
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }

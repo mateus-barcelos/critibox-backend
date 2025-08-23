@@ -23,6 +23,7 @@ public class User {
 
     }
 
+
     public String getUsername() {
         return username;
     }
@@ -43,7 +44,7 @@ public class User {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
+    public void addReview(Review review) {
+        reviews.add(review);
     }
 }

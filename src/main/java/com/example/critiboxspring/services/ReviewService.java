@@ -19,7 +19,7 @@ public class ReviewService {
     }
 
     public List<Review> getAllReviews(){
-      return  repository.findAll();
+      return repository.findAll();
     }
 
     public void deleteReviewById(Long id) {
