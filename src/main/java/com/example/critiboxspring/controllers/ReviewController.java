@@ -5,6 +5,7 @@ package com.example.critiboxspring.controllers;
 import com.example.critiboxspring.model.Review;
 import com.example.critiboxspring.dto.ReviewDTO;
 import com.example.critiboxspring.services.ReviewService;
+import com.example.critiboxspring.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,8 @@ import java.util.List;
 public class ReviewController {
     @Autowired
     private ReviewService reviewService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public List<ReviewDTO> getReviews(){
@@ -26,6 +29,7 @@ public class ReviewController {
     @PostMapping
     public ResponseEntity<Review> createReview(@RequestBody ReviewDTO reviewDTO){
         Review review = new Review(reviewDTO);
+        review.setUserOwner(userService.getUserById(reviewDTO.userOwnerId()).get());
         reviewService.saveReview(review);
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }

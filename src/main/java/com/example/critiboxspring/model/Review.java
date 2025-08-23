@@ -16,15 +16,28 @@ public class Review {
     @ManyToOne
     private User userOwner;
 
+    public void setSerie(String serie) {
+        this.serie = serie;
+    }
+
+    public void setUserOwner(User userOwner) {
+        this.userOwner = userOwner;
+    }
 
     public Review(ReviewDTO reviewDTO){
         this.serie = reviewDTO.serie();
         this.reviewText = reviewDTO.reviewText();
         this.rating = reviewDTO.rating();
+
     }
 
     public Review() {
 
+    }
+
+
+    public User getUserOwner() {
+        return userOwner;
     }
 
     public double getRating() {

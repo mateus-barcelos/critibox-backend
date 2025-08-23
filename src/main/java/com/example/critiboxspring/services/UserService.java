@@ -2,10 +2,12 @@ package com.example.critiboxspring.services;
 
 import com.example.critiboxspring.model.User;
 import com.example.critiboxspring.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService {
     private UserRepository repository;
 

@@ -4,6 +4,8 @@ package com.example.critiboxspring.controllers;
 import com.example.critiboxspring.dto.UserDTO;
 import com.example.critiboxspring.model.User;
 import com.example.critiboxspring.services.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
     private UserService service;
 
     @GetMapping
@@ -22,7 +25,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id){
         if(service.getUserById(id).isPresent()){
                 UserDTO user = new UserDTO(service.getUserById(id).get());
@@ -34,6 +37,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody UserDTO userDTO){
         User user = new User(userDTO);
+        service.saveUser(user);
         return new ResponseEntity<>(user,HttpStatus.CREATED);
     }
 
