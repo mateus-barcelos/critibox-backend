@@ -1,5 +1,6 @@
 package com.example.critiboxspring.model;
 
+import com.example.critiboxspring.dto.UserDTO;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,6 +14,14 @@ public class User {
     private String username;
     @OneToMany
     private List<Review> reviews;
+
+    public User(UserDTO userDTO){
+        this.username = userDTO.username();
+    }
+
+    public User() {
+
+    }
 
     public String getUsername() {
         return username;
