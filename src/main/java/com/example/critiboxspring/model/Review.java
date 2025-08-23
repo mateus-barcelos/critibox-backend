@@ -14,6 +14,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
+    @JoinColumn(name = "user_owner_id")
     private User userOwner;
 
     public void setSerie(String serie) {

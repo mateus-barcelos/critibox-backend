@@ -12,7 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String username;
-    @OneToMany
+    @OneToMany(mappedBy = "userOwner")
     private List<Review> reviews;
 
     public User(UserDTO userDTO){
