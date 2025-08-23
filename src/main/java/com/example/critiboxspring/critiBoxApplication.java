@@ -4,6 +4,7 @@ package com.example.critiboxspring;
 import com.example.critiboxspring.repository.EpisodeRepository;
 import com.example.critiboxspring.repository.ReviewRepository;
 import com.example.critiboxspring.repository.SerieRepository;
+import com.example.critiboxspring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ public class critiBoxApplication {
     private EpisodeRepository episodeRepository;
     @Autowired
     private ReviewRepository reviewRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(critiBoxApplication.class, args);

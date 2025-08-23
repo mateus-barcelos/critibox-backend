@@ -13,6 +13,9 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    private User userOwner;
+
 
     public Review(ReviewDTO reviewDTO){
         this.serie = reviewDTO.serie();
